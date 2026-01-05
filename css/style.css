@@ -1,0 +1,164 @@
+:root {
+--primary: #1e88e5;
+--dark: #0d47a1;
+--light: #f4f6f8;
+}
+
+* {
+box-sizing: border-box;
+}
+
+body {
+margin: 0;
+font-family: 'Segoe UI', Arial, sans-serif;
+background: var(--light);
+color: #333;
+line-height: 1.6;
+}
+
+/* HEADER */
+.header {
+background: white;
+box-shadow: 0 2px 10px rgba(0,0,0,.1);
+position: sticky;
+top: 0;
+z-index: 1000;
+}
+
+.container {
+max-width: 1100px;
+margin: auto;
+padding: 20px;
+}
+
+.header .container {
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.logo span {
+font-size: 14px;
+color: #666;
+}
+
+/* NAV */
+nav a {
+margin: 0 10px;
+text-decoration: none;
+color: #333;
+font-weight: 600;
+}
+
+nav a.cta {
+background: var(--primary);
+color: white;
+padding: 8px 14px;
+border-radius: 6px;
+}
+
+.menu-toggle {
+display: none;
+font-size: 26px;
+background: none;
+border: none;
+}
+
+/* HERO */
+.hero {
+background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
+url("../img/furgone.jpg") center/cover no-repeat;
+color: white;
+text-align: center;
+padding: 80px 20px;
+}
+
+.hero-buttons {
+margin-top: 20px;
+}
+
+.btn {
+padding: 12px 20px;
+border-radius: 6px;
+text-decoration: none;
+font-weight: bold;
+margin: 5px;
+display: inline-block;
+}
+
+.primary { background: var(--primary); color: white; }
+.secondary { background: white; color: var(--primary); }
+
+/* SEZIONI */
+section h2 {
+margin-bottom: 20px;
+}
+
+.grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 30px;
+align-items: center;
+}
+
+.cards {
+background: white;
+border-radius: 10px;
+}
+
+.card-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+gap: 20px;
+}
+
+.card {
+background: var(--light);
+padding: 20px;
+border-radius: 10px;
+font-weight: 600;
+}
+
+/* FOOTER */
+footer {
+background: var(--dark);
+color: white;
+text-align: center;
+padding: 20px;
+margin-top: 40px;
+}
+
+/* ANIMAZIONI */
+.fade-in {
+animation: fade 1s ease forwards;
+}
+
+@keyframes fade {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+nav {
+display: none;
+position: absolute;
+top: 70px;
+right: 20px;
+background: white;
+padding: 15px;
+border-radius: 10px;
+}
+
+nav.active {
+display: block;
+}
+
+.menu-toggle {
+display: block;
+}
+
+.grid {
+grid-template-columns: 1fr;
+}
+}
